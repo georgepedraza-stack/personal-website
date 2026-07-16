@@ -283,13 +283,40 @@
   <div class="wrap contact-inner">
     <h2>Let's build something together.</h2>
     <p>Got a classroom, a stage, or a prompt that needs a good scene partner? I'd love to hear about it.</p>
-    <p class="email-note">Contact form coming soon.</p>
+    <form class="contact-form" id="contact-form">
+      <div class="form-row">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-row">
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-row">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+    <p class="email-note">Or email me directly at <a href="mailto:play.draza@gmail.com">play.draza@gmail.com</a></p>
   </div>
 </section>
 
 <footer>
   &copy; 2026 draza. Built with plain HTML, CSS, and a little bit of NYC.
 </footer>
+
+<script>
+  document.getElementById('contact-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = document.getElementById('name').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var message = document.getElementById('message').value.trim();
+    var subject = encodeURIComponent('Message from ' + name + ' via draza.com');
+    var body = encodeURIComponent(message + '\n\n— ' + name + ' (' + email + ')');
+    window.location.href = 'mailto:play.draza@gmail.com?subject=' + subject + '&body=' + body;
+  });
+</script>
 
 </body>
 </html>

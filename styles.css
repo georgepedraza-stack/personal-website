@@ -626,10 +626,65 @@ section {
   margin-bottom: 2.5rem;
 }
 
+.contact-form {
+  text-align: left;
+  max-width: 460px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-row label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-soft);
+}
+
+.form-row input,
+.form-row textarea {
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.98rem;
+  resize: vertical;
+  transition: border-color 0.2s ease;
+}
+
+.form-row input:focus,
+.form-row textarea:focus {
+  outline: none;
+  border-color: var(--coral);
+}
+
+.contact-form .btn {
+  align-self: flex-start;
+  border: none;
+  cursor: pointer;
+}
+
 .contact .email-note {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   font-size: 0.95rem;
   color: var(--text-faint);
+}
+
+.contact .email-note a {
+  color: var(--coral);
+  text-decoration: none;
+}
+
+.contact .email-note a:hover {
+  text-decoration: underline;
 }
 
 /* ---------- Footer ---------- */
